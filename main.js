@@ -38,7 +38,8 @@ function deletePagante(){
     url: "delete.php",
     method: "GET",
     data: {
-      cane: id_meStesso,
+      id: id_meStesso,
+      title: "paganti",
     },
     success: function(data){
       meStesso.parent().remove();

@@ -3,8 +3,8 @@
    $username = "root";
    $password = "root";
    $dbName = "newHotel";
-   $id = $_GET["cane"];
-
+   $id = $_GET["id"];
+   $title = $_GET["title"];
    $conn = new mysqli($server,$username,$password,$dbName);
 
    if ($conn -> connect_errno) {
@@ -18,8 +18,8 @@
    $sql = "
 
 
-        DELETE FROM paganti
-        WHERE id =" . $id;
+        DELETE FROM " . $title
+        . "WHERE id =" . $id;
 
     $results = $conn -> query($sql);
 
