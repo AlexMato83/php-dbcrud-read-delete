@@ -3,7 +3,7 @@
    $username = "root";
    $password = "root";
    $dbName = "newHotel";
-   $id = $_POST["id"];
+   $id = $_GET["cane"];
 
    $conn = new mysqli($server,$username,$password,$dbName);
 
@@ -24,6 +24,6 @@
     $results = $conn -> query($sql);
 
 
-    
+
     $conn -> close(); 
 ?>

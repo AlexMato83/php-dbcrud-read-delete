@@ -1,6 +1,6 @@
 function init(){
   getAllOspiti();
-  $("#target").on("click", ".delete", deletePagante);
+  $("#target").on("click", ".fas fa-trash-alt", deletePagante);
 }
 $(document).ready(init);
 
@@ -16,7 +16,7 @@ function getAllOspiti(){
 
       for (var i = 0; i < data.length; i++) {
         var paganti = data[i];
-        $("#target").append('<li data-id=' + paganti.id +'>' + " " + paganti.name + " " + paganti.lastname + " " + paganti.address + "<span class='delete'>X</span>" + '</li>');
+        $("#target").append('<li data-id=' + paganti.id +'>' + " " + paganti.name + " " + paganti.lastname + " " + paganti.address + "<i class='fas fa-trash-alt'></i>" + '</li>');
       }
 
 
@@ -36,9 +36,9 @@ function deletePagante(){
   $.ajax({
 
     url: "delete.php",
-    method: "POST",
+    method: "GET",
     data: {
-      id: id_meStesso,
+      cane: id_meStesso,
     },
     success: function(data){
       meStesso.parent().remove();
